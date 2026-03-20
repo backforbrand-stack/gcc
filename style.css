@@ -1,0 +1,128 @@
+:root {
+    --primary: #dc2626;
+    --dark: #0f172a;
+    --light: #f1f5f9;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+
+body {
+    background-color: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Mobile Frame */
+.device-wrapper {
+    width: 360px;
+    height: 640px;
+    background: white;
+    border: 8px solid var(--dark);
+    border-radius: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+}
+
+.notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 96px;
+    height: 20px;
+    background: var(--dark);
+    border-bottom-left-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+    z-index: 10;
+}
+
+/* Typography & Layout */
+.content-area {
+    height: calc(100% - 80px);
+    padding: 2.5rem 1.5rem;
+    overflow-y: auto;
+    text-align: right;
+}
+
+.header-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.badge {
+    background: #fef2f2;
+    color: var(--primary);
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 8px;
+    font-weight: 900;
+    border: 1px solid #fee2e2;
+}
+
+.counter { font-size: 9px; color: #cbd5e1; font-weight: 900; }
+
+.slide-title {
+    font-size: 1.25rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: var(--dark);
+}
+
+/* Controls */
+.controls {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem 1.5rem 2rem;
+    display: flex;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.95);
+    border-top: 1px solid #f1f5f9;
+}
+
+.btn-icon {
+    width: 48px;
+    height: 48px;
+    background: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #94a3b8;
+}
+
+.btn-primary {
+    flex: 1;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+}
+
+/* Animation */
+.fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Slide Specific Styles */
+.card-dark { background: var(--dark); color: white; padding: 1.5rem; border-radius: 2rem; border-bottom: 4px solid var(--primary); }
+.text-red { color: var(--primary); }
+.bar-container { background: #f1f5f9; height: 6px; border-radius: 99px; margin-top: 4px; overflow: hidden; }
+.bar-fill { background: var(--primary); height: 100%; }
